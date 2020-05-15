@@ -7,13 +7,8 @@ export function NewUser(user : any) {
         function (resolve: any, reject: any) {
             if(user != null) {
                 console.log('Entered');
-                fs.writeFileSync('userDetails.json',JSON.stringify(user));
-                let rawdata = fs.readFileSync('userDetails.json'); 
-
-                // let data = fs.readFileSync('userDetails.json');
-                // let rruser = JSON.parse(data);
-                // console.log(rruser);
-            
+                fs.writeFileSync('./Model/userDetails.json',JSON.stringify(user));
+                let rawdata = fs.readFileSync('./Model/userDetails.json'); 
                 resolve(JSON.parse(rawdata)); 
             }
             else {

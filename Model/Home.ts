@@ -1,6 +1,6 @@
 import { retrieveUs } from './RetriveUser';
 import { getLocation } from './GoogleAPI';
-import { userRegistration } from './User';
+import { UserRegistration } from './User';
 
 let readlineSync = require('readline-sync');
 
@@ -12,13 +12,13 @@ let choice = readlineSync.questionInt('*****Enter Your Choice as Follows to perf
 
 switch (choice) {
     case 1:
-        userRegistration();
+        UserRegistration();
         break;
     case 2:
        //calling following method for retriving data from userDetails.json
         retrieveUs().then(
            function (result) {  
-               console.log('User Retrived : \n'+ result);
+               console.log('User Retrived : \n'+ JSON.stringify(result));
             },
            ).catch( function (error) {
              console.log("Error is : "+ error);

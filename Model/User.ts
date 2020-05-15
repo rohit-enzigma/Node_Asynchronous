@@ -1,7 +1,7 @@
 import { NewUser } from './Register'
 let readlineSync = require('readline-sync');
 
-export function userRegistration() {
+export function UserRegistration() {
 
     //user accepting data for registration
     let fName = readlineSync.question('Enter Your Name');
@@ -18,7 +18,7 @@ export function userRegistration() {
   //calling promise method for registering that user storing
   NewUser(User).then(
     function (result) {  
-      console.log('User Accepted : \n'+ result);
+      console.log('User Accepted : \n'+ JSON.stringify(result));
     },
     ).catch( function (error) {
         console.log("Error is : "+ error);
@@ -49,26 +49,6 @@ function setCredentials() {
        }
    )
 }
-
-
-
-
-
-// let rawdata = fs.readFileSync('userDetails.json'); 
-// let user = JSON.parse(rawdata);
-// console.log(user);
-
-
-// function newFunction() {
-//     var writedata = JSON.stringify(User);
-//     fs.writeFileSync('userDetails.json', writedata);
-// }
-// console.log("*** Your ENtered Details are as follows *** \n")
-// console.log(`Full Name :- ${userObj.firstName} ${userObj.lastName}`);
-// console.log(`Address :- ${userObj.address}`);
-// console.log(`User Id :- ${userObj.userName}`);
-// console.log(`Password :- ${userObj.password}`);
-
 
 
 
